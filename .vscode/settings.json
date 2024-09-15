@@ -1,0 +1,15 @@
+{
+    "liveSassCompile.settings.formats": [
+      {
+        "format": "expanded", // 指定輸出格式為擴展
+        "extensionName": ".css", // 擴展名稱
+        "savePath":"~/../css"  // 儲存位置，相對於工作區根目錄
+      },
+      {
+        "format": "compressed", // 指定輸出格式為緊湊
+        "extensionName": ".min.css", // 擴展名稱
+        "savePath": "~/../css" // 儲存位置，相對於工作區根目錄
+      }
+    ]
+  }
+  
