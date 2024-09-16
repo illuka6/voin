@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Noise Effect</title>
-    <link rel="stylesheet" href="./css/css/index.min.css"></link>
+    <title>VOIN JOY</title>
+    <link rel="stylesheet" href="./css/css/index.min.css">
+    </link>
 </head>
+
 <body>
+    <header>
+        <nav>
+            <a href="#" class="logo"><img src="./img/banner/logo.svg" alt=""></a>
+            <div class="btn_menu_wrap">
+                <div class="search_box"><img src="./img/banner/icon_search.svg"><input type="text"></div>
+                <div class="vote_btn"><a href="#">發起揪團投票</a></div>
+                <div class="menu"><img src="" alt=""></div>
+            </div>
+        </nav>
+    </header>
     <section id="background">
-        <h2>hello</h2>
         <svg>
-            <filter id="noise">      
+            <filter id="noise">
                 <feTurbulence id="turbilence" baseFrequency="0.9">
-                    <animate attributeName="baseFrequency" dur="50s" values="0.9 0.9; 0.8 0.8; 0.9 0.9;" repeatCount="indefinite"></animate>
+                    <animate attributeName="baseFrequency" dur="50s" values="0.9 0.9; 0.8 0.8; 0.9 0.9;"
+                        repeatCount="indefinite"></animate>
                 </feTurbulence>
                 <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
             </filter>
         </svg>
     </section>
-    <section id="banner"> 
-        <div class="title"><p>voin join</p></div>
-        <div class="text">
-            <span>投出你想參加的場次</span>
-            <span>Vote for Tickets</span>
+    <section id="banner">
+        <div class="title"><img src="./img/banner/VOIN_Joy.svg" alt=""></div>
+        <div class="content">
+            <div>投出你想參加的場次</div>
+            <div>Vote for Tickets</div>
         </div>
     </section>
+    <section id="newGroup">
+
+    </section>
 </body>
+
 </html>

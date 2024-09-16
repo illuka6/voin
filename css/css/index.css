@@ -1,7 +1,164 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* 不累加內距與邊框 */
+}
+
+/* 重置字體 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  /* 字體 英文先寫中文後 中文字體設定中英字體名都寫最保險 */
+  font-size: 100%;
+  line-height: 1.5;
+  /* background-color: #8f6b6d; */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  /* 常設a為display:block  但若有文字超連結*/
+  text-decoration: none;
+  color: var(--deep);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+}
+header nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+}
+header nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+header nav .logo img {
+  width: 48px;
+}
+header nav .btn_menu_wrap {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .btn_menu_wrap .search_box {
+  width: 200px;
+  height: 38px;
+  border-radius: 99px;
+  background-color: white;
+  border: black 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-right: 10px;
+}
+header nav .btn_menu_wrap .search_box img {
+  width: 20px;
+}
+header nav .btn_menu_wrap .search_box input {
+  width: 80%;
+  border: none;
+  outline: none;
+  height: 35px;
+  font-size: 18px;
+  margin-right: 5px;
+}
+header nav .btn_menu_wrap .vote_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 99px;
+  margin-right: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  /* Keyframes for gradient flow */
+}
+header nav .btn_menu_wrap .vote_btn::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  /* Adjust to match the border width */
+  left: -3px;
+  /* Adjust to match the border width */
+  right: -3px;
+  /* Adjust to match the border width */
+  bottom: -3px;
+  /* Adjust to match the border width */
+  border-radius: 99px;
+  background: linear-gradient(135deg, #ff1491, #ff63b6, #eae72d, #cc24ff, #b70aec);
+  background-size: 200% 200%;
+  /* Make the gradient larger than the element */
+  z-index: -1;
+  transition: background-position 1s ease;
+  /* Smooth transition */
+}
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+header nav .btn_menu_wrap .vote_btn:hover::before {
+  animation: gradient-flow 2s linear infinite;
+  /* Animation for gradient flow */
+}
+header nav .btn_menu_wrap .vote_btn a {
+  width: 100%;
+  text-align: center;
+}
+header nav .btn_menu_wrap .menu {
+  width: 48px;
+  height: 48px;
+  background-color: gray;
 }
 
 #background {
@@ -9,13 +166,45 @@
   top: -50px;
   left: -50px;
   width: calc(100% + 50px);
-  height: calc(200% + 50px);
+  height: calc(300% + 50px);
   background: repeating-linear-gradient(#ebeaea, #f6f6f6 50%, #fff 50%, #fff);
   background-size: 5px 5px;
   filter: url(#noise);
-  z-index: -1;
+  z-index: -2;
 }
 #background svg {
   width: 0;
   height: 0;
+}
+
+#banner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+#banner .title {
+  width: 100%;
+  margin-top: 8vw;
+  display: flex;
+  justify-content: center;
+}
+#banner .title img {
+  width: 40vw;
+}
+#banner .content {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin: 3vw 0 0 17vw;
+  height: 60px;
+  font-size: 2vw;
+  font-weight: 500;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 32px;
+}
+
+#newGroup {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.766);
 }/*# sourceMappingURL=index.css.map */
