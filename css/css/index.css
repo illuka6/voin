@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -166,13 +167,15 @@ header nav .btn_menu_wrap .menu {
   top: -50px;
   left: -50px;
   width: calc(100% + 50px);
-  height: calc(300% + 50px);
+  height: calc(500% + 50px);
   background: repeating-linear-gradient(#ebeaea, #f6f6f6 50%, #fff 50%, #fff);
-  background-size: 5px 5px;
+  background-size: 6px 6px;
   filter: url(#noise);
   z-index: -2;
 }
 #background svg {
+  filter: url(#noise);
+  -webkit-filter: url(#noise);
   width: 0;
   height: 0;
 }
@@ -203,8 +206,266 @@ header nav .btn_menu_wrap .menu {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 32px;
 }
+#banner .tk img {
+  width: 28vw;
+}
 
 #newGroup {
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.766);
+  background-color: rgba(0, 0, 0, 0.822);
+  position: relative;
+}
+#newGroup .title_wrap {
+  color: #fff;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  padding: 6vw 0 20px 6vw;
+}
+#newGroup .title_wrap .title_en {
+  font-size: 5vw;
+}
+#newGroup .title_wrap .title_cn {
+  font-size: 2vw;
+}
+#newGroup .tk_box {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#newGroup .tk_box .tk_wrap {
+  cursor: pointer;
+  width: auto;
+  display: flex;
+}
+#newGroup .tk_box .tk_wrap .tk {
+  background-color: #fff;
+  height: 260px;
+  border: black solid;
+  border-radius: 20px;
+  position: relative;
+  padding: 20px;
+}
+#newGroup .tk_box .tk_wrap .tk_l {
+  width: 100px;
+  display: flex;
+}
+#newGroup .tk_box .tk_wrap .tk_l .type_bg {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* 讓文字靠底部 */
+  position: relative;
+  background-image: none;
+  background-size: 300% 300%;
+  background-position: 0% 0%;
+  transition: background-position 2s ease;
+}
+#newGroup .tk_box .tk_wrap .tk_l .type_bg div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  font-weight: 800;
+  font-size: 50px;
+  transform: rotate(-90deg);
+  transform-origin: left top; /* 調整旋轉基點 */
+}
+#newGroup .tk_box .tk_wrap:hover .tk_l .type_bg {
+  background-color: transparent;
+  background-image: linear-gradient(135deg, black, #ff1491, #eae72d, #9212b8, black, black, black, black);
+  animation: gradientMove 0.4s linear forwards alternate;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+#newGroup .tk_box .tk_wrap .tk_md {
+  width: 460px;
+  border-right: 0px;
+  border-left: 1px;
+  display: flex;
+}
+#newGroup .tk_box .tk_wrap .tk_md .img_box {
+  border: 1px solid black;
+  height: 218px;
+  width: 218px;
+  flex-shrink: 0;
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box {
+  padding: 0 0 0 10px;
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box h1 {
+  font-size: 18px;
+  font-weight: 800;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box .text {
+  padding: 10px 5px;
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box .text p {
+  font-size: 15px;
+  line-height: 20px;
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box .pl {
+  margin: 0 0 15px 0;
+  display: flex;
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box .pl img {
+  width: 20px;
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box .tag_wrap {
+  font-size: 14px;
+  flex-wrap: wrap; /* 允許子元素換行 */
+  align-items: flex-start; /* 讓所有子元素靠上排列 */
+  justify-content: flex-start; /* 讓子元素靠左排列 */
+}
+#newGroup .tk_box .tk_wrap .tk_md .content_box .tag_wrap .tag {
+  padding: 1px 8px;
+  display: inline-flex; /* 確保標籤的內容內聯排列 */
+  align-items: center;
+  align-items: center;
+  margin-right: 2px; /* 每個標籤之間的間距 */
+  margin-bottom: 5px; /* 換行時標籤之間的垂直間距 */
+  word-break: break-word; /* 避免過長內容溢出，換行顯示 */
+  border: 1px;
+  border-radius: 99px;
+  border: 1px solid black;
+}
+#newGroup .tk_box .tk_wrap .tk_r {
+  width: 180px;
+  border-left: 0px;
+}
+#newGroup .tk_box .tk_wrap .tk_r::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -1px; /* 控制虛線的起始位置 */
+  width: 2px;
+  border-left: 2px dashed black;
+}
+#newGroup .tk_box .tk_wrap .tk_r .wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#newGroup .tk_box .tk_wrap .tk_r .wrap div {
+  text-align: center;
+}
+#newGroup .tk_box .tk_wrap .tk_r .wrap .date {
+  padding: 0 20px;
+  font-size: 35px;
+  line-height: 39px;
+  background-color: rgb(129, 129, 129);
+  color: white;
+  margin-bottom: 16px;
+}
+#newGroup .tk_box .tk_wrap .tk_r .wrap .time {
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 35px 0;
+}
+#newGroup .tk_box .tk_wrap .tk_r .wrap .location {
+  display: flex;
+  justify-content: center;
+  margin-right: 8px;
+}
+#newGroup .tk_box .tk_wrap .tk_r .wrap .location img {
+  width: 22px;
+}
+#newGroup .arr_more {
+  position: absolute;
+  bottom: 7vw;
+  right: 7vw;
+  color: white;
+}
+#newGroup .arr_more .text {
+  font-size: 18px;
+}
+#newGroup .arr_more .arrow {
+  margin-top: -10px;
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+}
+#newGroup .arr_more .arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+#newGroup .arr_more .arrow::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+#voting {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+#voting .title_wrap {
+  color: black;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 6vw 0 6vw;
+}
+#voting .title_wrap .title_en {
+  font-size: 5vw;
+}
+#voting .title_wrap .title_cn {
+  font-size: 2vw;
+}
+#voting .btn_wrap {
+  position: absolute;
+  right: -9%;
+  bottom: -13%;
+  width: 220px;
+  height: 220px;
+}
+#voting .btn_wrap .btn {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 990px;
+}
+#voting .btn_wrap .text {
+  color: white;
 }/*# sourceMappingURL=index.css.map */
