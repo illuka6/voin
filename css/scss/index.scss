@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@300;400;700&display=swap');
 
+body {
+    overflow: hidden;
+}
 
 header {
     position: absolute;
@@ -608,6 +611,17 @@ header {
             writing-mode: vertical-lr;
             font-weight: 400;
         }
+        .others {
+            position: relative;
+        }
+        .h_img {
+            transition: opacity 0.2s ease-in-out;
+            display :none;
+            position: absolute;
+            width: 100px; /* 調整圖片大小 */
+            height: auto;
+            z-index: 9999;
+        }
 
     }
 }
@@ -780,6 +794,21 @@ header {
 
 }
 
+#pic_show {
+    margin-top: 10vw;
+    height: 20vw;
+    width: 300%;
+    img {
+        align-items: start;
+        justify-self: start;
+        height: 100%;
+        width: 300%;
+        object-fit: cover;
+    
+    }
+    
+}
+
 #follow_news {
     height: 100vh;
 
@@ -802,7 +831,7 @@ header {
         }
 
         .email_box {
-            width: 18vw;
+            width: 21vw;
             height: 48px;
             border-radius: 99px;
             background-color: black;
@@ -826,6 +855,7 @@ header {
                 margin-right: 5px;
                 background-color: black;
                 color: white;
+
             }
         }
     }

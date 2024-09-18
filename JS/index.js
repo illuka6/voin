@@ -10,6 +10,9 @@ document.addEventListener('mousemove', (e) => {
   
 /* 滑鼠 */
 
+/* 星星動畫 */
+
+
 /* 票券動畫 */
 
 
@@ -31,3 +34,21 @@ gsap.from('.tk_wrap',{
     yPercent: '-310'
     // YPercent: '-200'
   })
+
+
+
+  $('#others').mousemove(function (event) {
+    $('#hover_img_other').show().css({
+        'left': event.pageX + 10 + 'px',
+        'top': event.pageY + 'px'
+    });
+}).mouseleave(function () {
+    $('#hover_img_other').hide();
+});
+
+gsap.to('#pic_show', {
+  x: -1000,
+  duration: 10,
+  repeat: -1,
+  ease: 'none',
+ })
