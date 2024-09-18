@@ -183,6 +183,7 @@ header nav .btn_menu_wrap .menu {
 }
 
 #banner {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -190,14 +191,14 @@ header nav .btn_menu_wrap .menu {
 }
 #banner .title {
   width: 100%;
-  margin-top: 8vw;
+  margin-top: 6vw;
   display: flex;
   justify-content: center;
 }
 #banner .title img {
   width: 40vw;
 }
-#banner .content {
+#banner .text {
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -205,17 +206,49 @@ header nav .btn_menu_wrap .menu {
   height: 60px;
   font-size: 2vw;
   font-weight: 500;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  line-height: 32px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  line-height: 2.2vw;
 }
-#banner .tk img {
-  width: 28vw;
+#banner .banner_content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 7vw;
+}
+#banner .banner_content .content_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#banner .banner_content .content_wrap .tk img {
+  width: 24vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 移動至中心 */
+}
+#banner .banner_content .content_wrap .line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(135deg, #ff1491, #ff63b6, #eae72d, #cc24ff, #b70aec);
+}
+#banner .banner_content .content_wrap img {
+  position: absolute;
+  width: 30vw;
 }
 
 #newGroup {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.822);
   position: relative;
+  overflow: hidden;
 }
 #newGroup .title_wrap {
   color: #fff;
@@ -463,7 +496,9 @@ header nav .btn_menu_wrap .menu {
 }
 #direction .content .title_cn {
   font-size: 2.2vw;
-  font-weight: 400;
+  font-weight: 600;
+  font-family: "LXGW WenKai Mono TC", monospace;
+  letter-spacing: 1px;
 }
 #direction .content .title_main {
   display: flex;
@@ -478,9 +513,11 @@ header nav .btn_menu_wrap .menu {
 }
 #direction .content .text_s {
   font-size: 1.2vw;
+  font-family: "Noto Sans TC", sans-serif;
 }
 #direction .content .text1,
 #direction .content .text2 {
+  font-family: "Noto Sans TC", sans-serif;
   font-size: 1.4vw;
   line-height: 2.5vw;
   display: flex;
@@ -511,9 +548,10 @@ header nav .btn_menu_wrap .menu {
   white-space: nowrap;
 }
 #direction .type_banner .cn {
+  font-family: "Noto Sans TC", sans-serif;
   font-size: 3vw;
   writing-mode: vertical-lr;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 #voting {
@@ -548,7 +586,6 @@ header nav .btn_menu_wrap .menu {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
 }
 #voting .htk_wrap .htk_box {
   margin: 2vw;
@@ -580,6 +617,10 @@ header nav .btn_menu_wrap .menu {
 }
 #voting .htk_wrap .htk_box .htk_img .img_wrap img {
   object-fit: cover;
+  width: 100%;
+  /* 確保圖片填滿寬度 */
+  height: 100%;
+  /* 確保圖片填滿高度 */
 }
 #voting .htk_wrap .htk_box .htk_content {
   border: 2px black solid;
@@ -604,19 +645,88 @@ header nav .btn_menu_wrap .menu {
 #voting .htk_wrap .htk_box .htk_content .e_location img {
   width: 20px;
 }
-#voting .btn_wrap {
-  position: absolute;
-  right: -9%;
-  bottom: -13%;
-  width: 220px;
-  height: 220px;
-}
-#voting .btn_wrap .btn {
+#voting .htk_btn {
+  display: flex;
+  position: relative;
   width: 100%;
-  height: 100%;
-  background-color: black;
-  border-radius: 990px;
 }
-#voting .btn_wrap .text {
+#voting .htk_btn .arr_more {
+  z-index: 2;
+  position: absolute;
+  right: 7vw;
+  color: black;
+}
+#voting .htk_btn .arr_more .text {
+  font-size: 18px;
+}
+#voting .htk_btn .arr_more .arrow {
+  margin-top: -10px;
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+}
+#voting .htk_btn .arr_more .arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+#voting .htk_btn .arr_more .arrow::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  transform: rotate(45deg);
+}
+
+#follow_news {
+  height: 100vh;
+}
+#follow_news .content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../img/banner/circle.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin-top: 100px;
+}
+#follow_news .content .text {
+  width: 30vw;
+  margin-top: -2vw;
+  margin-bottom: 2vw;
+}
+#follow_news .content .email_box {
+  width: 18vw;
+  height: 48px;
+  border-radius: 99px;
+  background-color: black;
+  border: white 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+#follow_news .content .email_box img {
+  margin: 8px;
+  width: 30px;
+}
+#follow_news .content .email_box input {
+  width: 84%;
+  border: none;
+  outline: none;
+  height: 35px;
+  font-size: 18px;
+  margin-right: 5px;
+  background-color: black;
   color: white;
 }/*# sourceMappingURL=index.css.map */

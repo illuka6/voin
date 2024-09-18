@@ -7,6 +7,8 @@
     <title>VOIN JOY</title>
     <link rel="stylesheet" href="./css/css/index.min.css">
     </link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -33,11 +35,17 @@
     </section>
     <section id="banner">
         <div class="title"><img src="./img/banner/VOIN_Joy.svg" alt=""></div>
-        <div class="content">
+        <div class="text">
             <div>投出你想參加的場次</div>
             <div>Vote for Tickets</div>
         </div>
-        <div class="tk"><img src="./img/banner/tk.svg" alt=""></div>
+        <div class="banner_content">
+            <div class="content_wrap">
+                <div class="tk target"><img src="./img/banner/tk.svg" alt=""></div>
+                <div class="line"></div>
+                <img src="./img/banner/star.svg" alt="">
+            </div>
+        </div>
     </section>
     <section id="newGroup">
         <div class="title_wrap">
@@ -87,8 +95,8 @@
                 </div>
             </div>
             <div class="arr_more">
-                <div class="text">more</div>
-                <div class="arrow"><span class="arr1"></span><span class="arr2"></span></div>
+                <div class="text">More</div>
+                <div class="arrow"></div>
             </div>
         </div>
 
@@ -146,7 +154,7 @@
             <div class="title_cn"><span>正在揪團</span></div>
         </div>
         <div class="htk_wrap">
-            
+
             <div class="htk_box">
                 <div class="htk_img">
                     <div class="type_tag">Reading Club</div>
@@ -171,25 +179,38 @@
             </div>
             <div class="htk_box">
                 <div class="htk_img">
-                    <div class="type_tag">Reading Club</div>
-                    <div class="img_wrap"><img src="./img/banner/鏈鋸人.jpg" alt=""></div>
+                    <div class="type_tag">Movie</div>
+                    <div class="img_wrap"><img src="./img/banner/item_xMen.jpg" alt=""></div>
                 </div>
                 <div class="htk_content">
-                    <div class="e_title">鏈鋸人漫畫讀書分享會</div>
-                    <div class="e_date">2024.3.25</div>
-                    <div class="e_location"><img src="./img/banner/location_on.svg" alt="">台中市</div>
+                    <div class="e_title">X戰警全系列電影馬拉松</div>
+                    <div class="e_date">2024.11.25</div>
+                    <div class="e_location"><img src="./img/banner/location_on.svg" alt="">台北市</div>
                 </div>
             </div>
         </div>
+        <div class="htk_btn">
+            <div class="arr_more">
+                <div class="text">Vote</div>
+                <div class="arrow"></div>
+            </div>
+        </div>
 
-        <div class="btn_wrap">
-            <div class="btn">
-                <div class="text">More or Vote</div>
+    </section>
+    <section id="follow_news">
+        <div class="content">
+            <div class="half_circle">
+            </div>
+            <div class="text"><img src="./img/banner/follow_text.svg" alt=""></div>
+            <div class="email_box">
+                <img src="./img/banner/mail_w.svg" alt="">
+                <input type="text">
             </div>
 
         </div>
 
     </section>
+    <script src="./JS/index.js"></script>
 </body>
 
 </html>
