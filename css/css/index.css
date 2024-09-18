@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@300;400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -167,7 +169,7 @@ header nav .btn_menu_wrap .menu {
   top: -50px;
   left: -50px;
   width: calc(100% + 50px);
-  height: calc(500% + 50px);
+  height: calc(600% + 50px);
   background: repeating-linear-gradient(#ebeaea, #f6f6f6 50%, #fff 50%, #fff);
   background-size: 6px 6px;
   filter: url(#noise);
@@ -264,7 +266,8 @@ header nav .btn_menu_wrap .menu {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: flex-end; /* 讓文字靠底部 */
+  justify-content: flex-end;
+  /* 讓文字靠底部 */
   position: relative;
   background-image: none;
   background-size: 300% 300%;
@@ -279,7 +282,8 @@ header nav .btn_menu_wrap .menu {
   font-weight: 800;
   font-size: 50px;
   transform: rotate(-90deg);
-  transform-origin: left top; /* 調整旋轉基點 */
+  transform-origin: left top;
+  /* 調整旋轉基點 */
 }
 #newGroup .tk_box .tk_wrap:hover .tk_l .type_bg {
   background-color: transparent;
@@ -331,18 +335,25 @@ header nav .btn_menu_wrap .menu {
 }
 #newGroup .tk_box .tk_wrap .tk_md .content_box .tag_wrap {
   font-size: 14px;
-  flex-wrap: wrap; /* 允許子元素換行 */
-  align-items: flex-start; /* 讓所有子元素靠上排列 */
-  justify-content: flex-start; /* 讓子元素靠左排列 */
+  flex-wrap: wrap;
+  /* 允許子元素換行 */
+  align-items: flex-start;
+  /* 讓所有子元素靠上排列 */
+  justify-content: flex-start;
+  /* 讓子元素靠左排列 */
 }
 #newGroup .tk_box .tk_wrap .tk_md .content_box .tag_wrap .tag {
   padding: 1px 8px;
-  display: inline-flex; /* 確保標籤的內容內聯排列 */
+  display: inline-flex;
+  /* 確保標籤的內容內聯排列 */
   align-items: center;
   align-items: center;
-  margin-right: 2px; /* 每個標籤之間的間距 */
-  margin-bottom: 5px; /* 換行時標籤之間的垂直間距 */
-  word-break: break-word; /* 避免過長內容溢出，換行顯示 */
+  margin-right: 2px;
+  /* 每個標籤之間的間距 */
+  margin-bottom: 5px;
+  /* 換行時標籤之間的垂直間距 */
+  word-break: break-word;
+  /* 避免過長內容溢出，換行顯示 */
   border: 1px;
   border-radius: 99px;
   border: 1px solid black;
@@ -356,7 +367,8 @@ header nav .btn_menu_wrap .menu {
   position: absolute;
   top: 10px;
   bottom: 10px;
-  left: -1px; /* 控制虛線的起始位置 */
+  left: -1px;
+  /* 控制虛線的起始位置 */
   width: 2px;
   border-left: 2px dashed black;
 }
@@ -430,6 +442,80 @@ header nav .btn_menu_wrap .menu {
   transform: rotate(45deg);
 }
 
+#direction {
+  position: relative;
+  height: 85vw;
+  overflow: hidden;
+}
+#direction .content {
+  display: flex;
+  flex-direction: column;
+}
+#direction .content .sec1,
+#direction .content .sec2 {
+  margin: 2vw;
+  padding: 2.8vw;
+  border-bottom: 1px solid black;
+  width: 52vw;
+}
+#direction .content .sec1 {
+  margin-bottom: 0;
+}
+#direction .content .title_cn {
+  font-size: 2.2vw;
+  font-weight: 400;
+}
+#direction .content .title_main {
+  display: flex;
+}
+#direction .content .title_en {
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5vw;
+  margin: 1vw 0;
+  white-space: nowrap;
+}
+#direction .content .text_s {
+  font-size: 1.2vw;
+}
+#direction .content .text1,
+#direction .content .text2 {
+  font-size: 1.4vw;
+  line-height: 2.5vw;
+  display: flex;
+}
+#direction .content .text1 img,
+#direction .content .text2 img {
+  width: 1.6vw;
+  margin-right: 4px;
+}
+#direction .type_banner {
+  position: absolute;
+  padding-top: 1.6vw;
+  right: 0;
+  top: 0;
+  color: rgb(30, 30, 30);
+  display: flex;
+  align-items: start;
+  width: 42vw;
+}
+#direction .type_banner .en {
+  display: inline-block;
+  font-size: 10vw;
+  font-weight: 900;
+  line-height: 10.5vw;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+#direction .type_banner .cn {
+  font-size: 3vw;
+  writing-mode: vertical-lr;
+  font-weight: 500;
+}
+
 #voting {
   overflow: hidden;
   height: 100vh;
@@ -445,13 +531,78 @@ header nav .btn_menu_wrap .menu {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 6vw 0 6vw;
+  padding: 5vw 0 0;
 }
 #voting .title_wrap .title_en {
   font-size: 5vw;
 }
 #voting .title_wrap .title_cn {
+  margin-top: -15px;
+  font-family: "LXGW WenKai Mono TC", monospace;
+  font-weight: 500;
+  font-style: normal;
   font-size: 2vw;
+}
+#voting .htk_wrap {
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+#voting .htk_wrap .htk_box {
+  margin: 2vw;
+  height: 420px;
+  width: 260px;
+}
+#voting .htk_wrap .htk_box .htk_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  overflow: hidden;
+  border: 2px black solid;
+  height: 300px;
+  width: 260px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 20px;
+}
+#voting .htk_wrap .htk_box .htk_img .type_tag {
+  background-color: black;
+  height: 40px;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 25px;
+  font-weight: 700;
+}
+#voting .htk_wrap .htk_box .htk_img .img_wrap {
+  height: 260px;
+}
+#voting .htk_wrap .htk_box .htk_img .img_wrap img {
+  object-fit: cover;
+}
+#voting .htk_wrap .htk_box .htk_content {
+  border: 2px black solid;
+  border-top: 0px;
+  height: 120px;
+  width: 260px;
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 20px;
+  background-color: white;
+  padding: 10px 26px;
+}
+#voting .htk_wrap .htk_box .htk_content .e_title {
+  font-family: "Noto Sans TC", system-ui;
+  font-size: 18px;
+  font-weight: 600;
+}
+#voting .htk_wrap .htk_box .htk_content .e_location {
+  margin-top: 18px;
+  margin-left: -4px;
+  display: flex;
+}
+#voting .htk_wrap .htk_box .htk_content .e_location img {
+  width: 20px;
 }
 #voting .btn_wrap {
   position: absolute;

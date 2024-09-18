@@ -1,5 +1,8 @@
 @use 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@300;400;700&display=swap');
+
 
 header {
     position: absolute;
@@ -89,7 +92,7 @@ header {
                     bottom: -3px;
                     /* Adjust to match the border width */
                     border-radius: 99px;
-                    background: linear-gradient(135deg, #ff1491,#ff63b6, #eae72d, #cc24ff, #b70aec);
+                    background: linear-gradient(135deg, #ff1491, #ff63b6, #eae72d, #cc24ff, #b70aec);
                     background-size: 200% 200%;
                     /* Make the gradient larger than the element */
                     z-index: -1;
@@ -142,7 +145,7 @@ header {
     top: -50px;
     left: -50px;
     width: calc(100% + 50px);
-    height: calc(500% + 50px);
+    height: calc(600% + 50px);
     background: repeating-linear-gradient(#ebeaea, #f6f6f6 50%, #fff 50%, #fff);
     background-size: 6px 6px;
     filter: url(#noise);
@@ -150,7 +153,7 @@ header {
 
     svg {
         filter: url(#noise);
--webkit-filter: url(#noise);
+        -webkit-filter: url(#noise);
         width: 0;
         height: 0;
     }
@@ -186,17 +189,20 @@ header {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         line-height: 32px;
     }
+
     .tk {
-        img{
-        width: 28vw;
-    }}
+        img {
+            width: 28vw;
+        }
+    }
 }
 
 #newGroup {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.822);
     position: relative;
-    .title_wrap{
+
+    .title_wrap {
         color: #fff;
         font-family: "Inika", serif;
         font-weight: 400;
@@ -207,13 +213,16 @@ header {
         justify-content: center;
         width: 100%;
         padding: 6vw 0 20px 6vw;
+
         .title_en {
             font-size: 5vw;
         }
-        .title_cn{
+
+        .title_cn {
             font-size: 2vw;
         }
     }
+
     .tk_box {
         position: absolute;
         top: 0;
@@ -222,131 +231,161 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        .tk_wrap{
+
+        .tk_wrap {
             cursor: pointer;
             width: auto;
             display: flex;
-            .tk{
+
+            .tk {
                 background-color: #fff;
-                    height: 260px;
-                    border:black solid ;
-                    border-radius: 20px;
-                    position: relative; 
-                    padding: 20px;
+                height: 260px;
+                border: black solid;
+                border-radius: 20px;
+                position: relative;
+                padding: 20px;
             }
-            .tk_l{
+
+            .tk_l {
                 width: 100px;
-                display: flex;                
-                    .type_bg{
-                        background-color: black;
-                        height: 100%;
-                        width: 100%;
-                        display: flex;
-                        justify-content: flex-end; /* 讓文字靠底部 */
-                        position: relative;
-                        background-image: none;
-                        background-size: 300% 300%; // 設定背景尺寸較大，便於動畫流動
-                        background-position: 0% 0%; // 初始位置
-                        transition:    background-position 2s  ease; 
-      // hover 在 .tk_wrap 上時，觸發漸變和背景流動效果
-                                
-                        div {
-                            position: absolute;
-                            left:0;
-                            bottom:0;
-                            // height: 100%;
-                            // width: 100%;
-                            color: #fff;
-                            font-weight: 800;
-                            font-size: 50px;
-                            transform: rotate(-90deg);
-                            transform-origin: left top; /* 調整旋轉基點 */
-                        }
+                display: flex;
+
+                .type_bg {
+                    background-color: black;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    /* 讓文字靠底部 */
+                    position: relative;
+                    background-image: none;
+                    background-size: 300% 300%; // 設定背景尺寸較大，便於動畫流動
+                    background-position: 0% 0%; // 初始位置
+                    transition: background-position 2s ease;
+                    // hover 在 .tk_wrap 上時，觸發漸變和背景流動效果
+
+                    div {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        // height: 100%;
+                        // width: 100%;
+                        color: #fff;
+                        font-weight: 800;
+                        font-size: 50px;
+                        transform: rotate(-90deg);
+                        transform-origin: left top;
+                        /* 調整旋轉基點 */
                     }
+                }
             }
+
             &:hover .tk_l .type_bg {
                 background-color: transparent; // 移除黑色背景，显示渐变
-                background-image: linear-gradient(135deg, black,#ff1491, #eae72d, #9212b8, black,black, black, black); // 渐变背景
-                animation: gradientMove 0.4s linear  forwards alternate;
-                
-                }
-                // 定义背景流动的关键帧动画
+                background-image: linear-gradient(135deg, black, #ff1491, #eae72d, #9212b8, black, black, black, black); // 渐变背景
+                animation: gradientMove 0.4s linear forwards alternate;
+
+            }
+
+            // 定义背景流动的关键帧动画
             @keyframes gradientMove {
-    0% {
-            background-position: 0% 0%;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
-  }
-            .tk_md{    
+                0% {
+                    background-position: 0% 0%;
+                }
+
+                100% {
+                    background-position: 100% 100%;
+                }
+            }
+
+            .tk_md {
                 width: 460px;
                 border-right: 0px;
                 border-left: 1px;
                 display: flex;
-                .img_box{
-                    border:1px solid black;
+
+                .img_box {
+                    border: 1px solid black;
                     height: 218px;
                     width: 218px;
                     flex-shrink: 0
                 }
-                .content_box{
-                    
+
+                .content_box {
+
                     padding: 0 0 0 10px;
+
                     h1 {
                         font-size: 18px;
                         font-weight: 800;
-                        padding-bottom:10px;
+                        padding-bottom: 10px;
                         border-bottom: 1px solid black;
                     }
+
                     .text {
-                        padding:10px 5px;
-                    p {
-                        font-size: 15px;
-                        line-height: 20px;
-                    }}
+                        padding: 10px 5px;
+
+                        p {
+                            font-size: 15px;
+                            line-height: 20px;
+                        }
+                    }
+
                     .pl {
-                        margin:0 0 15px 0;
+                        margin: 0 0 15px 0;
                         display: flex;
+
                         img {
-                            width:20px;
+                            width: 20px;
                         }
                     }
 
                     .tag_wrap {
                         font-size: 14px;
-                        flex-wrap: wrap; /* 允許子元素換行 */
-                        align-items: flex-start; /* 讓所有子元素靠上排列 */
-                        justify-content: flex-start; /* 讓子元素靠左排列 */
+                        flex-wrap: wrap;
+                        /* 允許子元素換行 */
+                        align-items: flex-start;
+                        /* 讓所有子元素靠上排列 */
+                        justify-content: flex-start;
+
+                        /* 讓子元素靠左排列 */
                         .tag {
                             padding: 1px 8px;
-                            display: inline-flex; /* 確保標籤的內容內聯排列 */
-                        align-items: center;
-                        align-items: center;
-                        margin-right: 2px; /* 每個標籤之間的間距 */
-                        margin-bottom: 5px; /* 換行時標籤之間的垂直間距 */
-                        word-break: break-word; /* 避免過長內容溢出，換行顯示 */
-                        border: 1px;
-                        border-radius: 99px;
-                        border:1px solid black;
+                            display: inline-flex;
+                            /* 確保標籤的內容內聯排列 */
+                            align-items: center;
+                            align-items: center;
+                            margin-right: 2px;
+                            /* 每個標籤之間的間距 */
+                            margin-bottom: 5px;
+                            /* 換行時標籤之間的垂直間距 */
+                            word-break: break-word;
+                            /* 避免過長內容溢出，換行顯示 */
+                            border: 1px;
+                            border-radius: 99px;
+                            border: 1px solid black;
                         }
                     }
                 }
-                    
+
             }
-            .tk_r{
+
+            .tk_r {
                 width: 180px;
-                border-left: 0px ;
-                &::before{
-                content: '';
-                position: absolute;
-                top: 10px;
-                bottom: 10px;
-                left: -1px; /* 控制虛線的起始位置 */
-                width: 2px;
-                border-left: 2px dashed black;
+                border-left: 0px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 10px;
+                    bottom: 10px;
+                    left: -1px;
+                    /* 控制虛線的起始位置 */
+                    width: 2px;
+                    border-left: 2px dashed black;
                 }
-                .wrap{
+
+                .wrap {
                     width: 100%;
                     height: 100%;
                     display: flex;
@@ -354,76 +393,86 @@ header {
                     align-items: center;
                     // justify-content: center;
                     text-align: center;
+
                     div {
                         text-align: center;
                     }
+
                     .date {
-                        padding:0 20px ;
+                        padding: 0 20px;
                         font-size: 35px;
                         line-height: 39px;
                         background-color: rgb(129, 129, 129);
                         color: white;
                         margin-bottom: 16px;
                     }
+
                     .time {
                         background-color: black;
                         color: white;
                         font-size: 14px;
                         line-height: 16px;
-                        margin:35px 0;
+                        margin: 35px 0;
                     }
+
                     .location {
                         display: flex;
                         justify-content: center;
+
                         img {
                             width: 22px;
                         }
+
                         margin-right: 8px;
                     }
 
                 }
-            }         
+            }
         }
 
 
     }
+
     .arr_more {
         position: absolute;
         bottom: 7vw;
         right: 7vw;
         color: white;
+
         .text {
             font-size: 18px;
-            
-        }        
+
+        }
+
         .arrow {
-            margin-top:-10px ;
+            margin-top: -10px;
             position: relative;
             display: inline-block;
             width: 150px;
             height: 50px;
-        
 
-        
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -2px;
-            width: 100%;
-            height: 2px;
-            background-color: white;
-        } 
-        &::after {
-            content: '';
-            position: absolute;
-            top: 18px;
-            right: 0;
-            width: 20px;
-            height: 2px;
-            background-color: white;
-            transform: rotate(45deg);
-        }
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: white;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 18px;
+                right: 0;
+                width: 20px;
+                height: 2px;
+                background-color: white;
+                transform: rotate(45deg);
+            }
         }
 
 
@@ -431,11 +480,101 @@ header {
 
 }
 
+#direction {
+    position: relative;
+    height: 85vw;
+    overflow: hidden;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        .sec1,
+        .sec2 {
+            margin: 2vw;
+            padding: 2.8vw;
+            border-bottom: 1px solid black;
+            width: 52vw;
+        }
+
+        .sec1 {
+            margin-bottom: 0;
+        }
+
+        .title_cn {
+            font-size: 2.2vw;
+            font-weight: 400;
+
+        }
+
+        .title_main {
+            display: flex;
+        }
+
+        .title_en {
+            font-family: "Inika", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 4.5vw;
+            margin: 1vw 0;
+            white-space: nowrap;
+        }
+
+        .text_s {
+            font-size: 1.2vw;
+        }
+
+        .text1,
+        .text2 {
+            font-size: 1.4vw;
+            line-height: 2.5vw;
+            display: flex;
+
+            img {
+                width: 1.6vw;
+                margin-right: 4px;
+
+            }
+        }
+    }
+
+    .type_banner {
+        position: absolute;
+        padding-top: 1.6vw;
+        right: 0;
+        top: 0;
+        color: rgb(30, 30, 30);
+        display: flex;
+        align-items: start;
+        width: 42vw;
+
+        .en {
+            display: inline-block;
+            font-size: 10vw;
+            font-weight: 900;
+            line-height: 10.5vw;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+
+
+        .cn {
+            font-size: 3vw;
+            writing-mode: vertical-lr;
+            font-weight: 500;
+        }
+
+    }
+}
+
 #voting {
     overflow: hidden;
     height: 100vh;
     position: relative;
-    .title_wrap{
+
+    .title_wrap {
         color: black;
         font-family: "Inika", serif;
         font-weight: 400;
@@ -445,28 +584,111 @@ header {
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 6vw 0 6vw;
+        padding: 5vw 0 0;
+
         .title_en {
             font-size: 5vw;
         }
-        .title_cn{
+
+        .title_cn {
+            margin-top: -15px;
+            font-family: "LXGW WenKai Mono TC", monospace;
+            font-weight: 500;
+            font-style: normal;
             font-size: 2vw;
-        }    
+        }
     }
+
+    .htk_wrap {
+        padding: 2vw;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+
+        .htk_box {
+            margin: 2vw;
+            height: 420px;
+            width: 260px;
+
+            .htk_img {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                overflow: hidden;
+                border: 2px black solid;
+                height: 300px;
+                width: 260px;
+                border-top-left-radius: 40px;
+                border-bottom-left-radius: 20px;
+
+                .type_tag {
+                    background-color: black;
+                    height: 40px;
+                    color: white;
+                    text-align: center;
+                    line-height: 40px;
+                    font-size: 25px;
+                    font-weight: 700;
+                }
+
+                .img_wrap {
+                    height: 260px;
+
+                    img {
+                        object-fit: cover;
+
+                    }
+                }
+
+            }
+
+            .htk_content {
+                border: 2px black solid;
+                border-top: 0px;
+                height: 120px;
+                width: 260px;
+                border-bottom-left-radius: 40px;
+                border-top-left-radius: 20px;
+                background-color: white;
+                padding: 10px 26px;
+
+                .e_title {
+                    font-family: "Noto Sans TC", system-ui;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                .e_location {
+                    margin-top: 18px;
+                    margin-left: -4px;
+                    display: flex;
+
+                    img {
+                        width: 20px;
+                    }
+                }
+
+            }
+        }
+    }
+
     .btn_wrap {
         position: absolute;
         right: -9%;
         bottom: -13%;
         width: 220px;
         height: 220px;
+
         .btn {
             width: 100%;
             height: 100%;
             background-color: black;
-            border-radius: 990px;           
+            border-radius: 990px;
         }
+
         .text {
-            color:white;
+            color: white;
         }
 
     }
