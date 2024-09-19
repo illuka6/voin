@@ -1,9 +1,72 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-function Home () {
+gsap.registerPlugin(ScrollTrigger);
+
+const Home = () => {
+
+    useEffect(() => {
+        // 處理鼠標移動的線條變色效果
+        const colors = ['#ff1491', '#ff63b6', '#eae72d', '#cc24ff'];
+
+        const handleMouseMove = (e) => {
+            const index = Math.floor((e.clientX / window.innerWidth) * (colors.length - 1));
+            const nextIndex = (index + 1) % colors.length;
+
+            document.querySelector('.line').style.background = `linear-gradient(135deg, ${colors[index]}, ${colors[nextIndex]})`;
+        };
+
+        document.addEventListener('mousemove', handleMouseMove);
+
+        // GSAP滾動觸發動畫
+        gsap.from('.tk_wrap', {
+            scrollTrigger: {
+                trigger: '.tk_box',
+                start: 'top center',
+                end: 'top 20%',
+                scrub: true,
+            },
+            rotation: 45,
+            yPercent: '-310',
+        });
+
+        // 無限滾動動畫
+        gsap.to('#show_box', {
+            x: -2000,
+            duration: 20,
+            repeat: -1,
+            ease: 'none',
+        });
+
+        // 星星旋轉與縮放動畫
+        const star = document.querySelector('.star');
+        gsap.to(star, {
+            rotation: 360,
+            duration: 20,
+            ease: 'linear',
+            repeat: -1,
+        });
+        gsap.to(star, {
+            scale: 1.45,
+            duration: 2,
+            ease: 'linear',
+            yoyo: true,
+            repeat: -1,
+        });
+
+        // 清理事件監聽器和動畫
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+            ScrollTrigger.kill();
+        };
+    }, []);
+
+
+
     return (
-    <>
-        
+        <>
+
             <header>
                 <nav>
                     <a href="#" class="logo"><img src="./img/banner/logo.svg" alt="" /></a>
@@ -71,10 +134,10 @@ function Home () {
                                     </div>
                                     <div class="tag">
                                         <p>雷利史考特粉絲在哪裡
-                                            <p>
-                                            </div>
+                                        </p>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="tk tk_r">
                                 <div class="wrap">
@@ -82,7 +145,7 @@ function Home () {
                                     <div class="date">02.19</div>
                                     <div class="wd">週六</div>
                                     <div class="time">01:00 PM</div>
-                                    <div class="location"><img src="./img/banner/location_on.svg" alt="">台北市</div>
+                                    <div class="location"><img src="./img/banner/location_on.svg" alt="" />台北市</div>
                                 </div>
                             </div>
                         </div>
@@ -92,8 +155,8 @@ function Home () {
                         </div>
                     </div>
                 </div>
-
             </section>
+
             <section id="direction">
                 <div class="content">
                     <div class="sec1">
@@ -139,7 +202,6 @@ function Home () {
                         <div class="cn">電影</div>
                     </div>
                 </div>
-
             </section>
             <section id="voting">
                 <div class="title_wrap">
@@ -207,6 +269,6 @@ function Home () {
 
                 </div>
             </section>
-        </> );
-         }
-    export default Home;
+        </>)
+}
+export default Home
