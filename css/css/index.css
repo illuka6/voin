@@ -50,10 +50,6 @@ a {
   color: var(--deep);
 }
 
-body {
-  overflow: hidden;
-}
-
 header {
   position: absolute;
   top: 0;
@@ -206,7 +202,7 @@ header nav .btn_menu_wrap .menu {
   display: flex;
   flex-direction: column;
   align-items: end;
-  margin: 3vw 0 0 17vw;
+  margin: 10px 0 0 17vw;
   height: 60px;
   font-size: 2vw;
   font-weight: 500;
@@ -235,7 +231,8 @@ header nav .btn_menu_wrap .menu {
   width: 24vw;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* 移動至中心 */
+  transform: translate(-50%, -50%);
+  /* 移動至中心 */
 }
 #banner .banner_content .content_wrap .line {
   position: absolute;
@@ -245,7 +242,7 @@ header nav .btn_menu_wrap .menu {
 }
 #banner .banner_content .content_wrap img {
   position: absolute;
-  width: 30vw;
+  width: 20vw;
 }
 
 #newGroup {
@@ -557,17 +554,6 @@ header nav .btn_menu_wrap .menu {
   writing-mode: vertical-lr;
   font-weight: 400;
 }
-#direction .type_banner .others {
-  position: relative;
-}
-#direction .type_banner .h_img {
-  transition: opacity 0.2s ease-in-out;
-  display: none;
-  position: absolute;
-  width: 100px; /* 調整圖片大小 */
-  height: auto;
-  z-index: 9999;
-}
 
 #voting {
   overflow: hidden;
@@ -631,8 +617,7 @@ header nav .btn_menu_wrap .menu {
   height: 260px;
 }
 #voting .htk_wrap .htk_box .htk_img .img_wrap img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   /* 確保圖片填滿寬度 */
   height: 100%;
@@ -703,17 +688,18 @@ header nav .btn_menu_wrap .menu {
 }
 
 #pic_show {
-  margin-top: 10vw;
-  height: 20vw;
-  width: 300%;
+  overflow: hidden;
 }
-#pic_show img {
-  align-items: start;
-  justify-self: start;
-  height: 100%;
+#pic_show #show_box {
+  margin: 10vw 0;
+  height: 16vw;
   width: 300%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  align-self: start;
+}
+#pic_show #show_box #pic_line {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 #follow_news {
@@ -736,7 +722,7 @@ header nav .btn_menu_wrap .menu {
   margin-bottom: 2vw;
 }
 #follow_news .content .email_box {
-  width: 21vw;
+  width: 18vw;
   height: 48px;
   border-radius: 99px;
   background-color: black;

@@ -10,6 +10,7 @@
         "extensionName": ".min.css", // 擴展名稱
         "savePath": "~/../css" // 儲存位置，相對於工作區根目錄
       }
-    ]
+    ],
+    "liveServer.settings.port": 5501
   }
   

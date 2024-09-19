@@ -43,7 +43,7 @@
             <div class="content_wrap">
                 <div class="tk target"><img src="./img/banner/tk.svg" alt=""></div>
                 <div class="line"></div>
-                <img src="./img/banner/star.svg" alt="">
+                <img id="star" class="star" src="./img/banner/star.svg" alt="">
             </div>
         </div>
     </section>
@@ -103,7 +103,7 @@
     </section>
     <section id="direction">
         <div class="content">
-            <div class="sec1" >
+            <div class="sec1">
                 <div class="title_cn">想開團?</div>
                 <div class="title_main">
                     <div class="title_en">Initiate a Vote</div>
@@ -129,27 +129,22 @@
 
         </div>
         <div class="type_banner">
-            <div class="others" id="others">
+            <div class="others">
                 <div class="en">Others</div>
                 <div class="cn">其他</div>
-                <img id="hover_img_other" class="h_img hover_img_other" src="./img/banner/hover_others.jpg" alt="">
             </div>
-            
             <div class="reading_club">
                 <div class="en">Reading Club</div>
                 <div class="cn">讀書會</div>
             </div>
-            <img  id="hover_img_reading" class="h_img hover_img_reading" src="" alt="">
             <div class="tea_party">
                 <div class="en">Tea Party</div>
                 <div class="cn">茶會</div>
             </div>
-            <img  id="hover_img_tea" class="h_img hover_img_tea"  src="" alt="">
             <div class="movie">
                 <div class="en">Movie</div>
                 <div class="cn">電影</div>
             </div>
-            <img  id="hover_img_movie" class="h_img hover_img_movie"  src="" alt="">
         </div>
 
     </section>
@@ -202,9 +197,11 @@
         </div>
 
     </section>
-    <div id="pic_show">
-        <img src="./img/banner/pic_line.svg" alt="">
+    <section id="pic_show">
+    <div id="show_box">
+        <img id="pic_line" src="./img/banner/picline.png" alt="">
     </div>
+    </section>
     <section id="follow_news">
         <div class="content">
             <div class="half_circle">
@@ -212,13 +209,12 @@
             <div class="text"><img src="./img/banner/follow_text.svg" alt=""></div>
             <div class="email_box">
                 <img src="./img/banner/mail_w.svg" alt="">
-                <input type="text" placeholder="填寫email接收最新消息"/>
+                <input type="text" placeholder="追蹤最新開團消息">
             </div>
 
         </div>
 
     </section>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./JS/index.js"></script>
 </body>
 
