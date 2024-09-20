@@ -50,6 +50,66 @@ a {
   color: var(--deep);
 }
 
+#footer {
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
+}
+#footer .main_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#footer .main_wrap .logo_wrap {
+  margin: 5vw;
+}
+#footer .main_wrap .logo_wrap img {
+  width: 4vw;
+}
+#footer .main_wrap ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#footer .main_wrap ul li {
+  font-size: 1.2vw;
+  margin: 1vw;
+}
+#footer .main_wrap .copyRight {
+  font-family: "Noto Serif TC", "Noto Serif TC", serif;
+  padding: 20px 0;
+  font-size: 1vw;
+}
+
+footer ul,
+footer ol,
+footer li {
+  list-style: none;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: red;
+  border: 1px solid red;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 1000; /* 確保 tooltip 在最上面 */
+}
+
+.react-tooltip {
+  display: block !important; /* 強制顯示以檢查 */
+  position: absolute;
+  background-color: red;
+  border: 1px solid red;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 1000; /* 確保 tooltip 在最上面 */
+}
+
+/*  */
 header {
   position: absolute;
   top: 0;

@@ -1,6 +1,11 @@
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useRef, useLayoutEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
+
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -8,29 +13,43 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
 
+
+
+
     ////
     const tkWrapRef = useRef(null);
+    const showBoxRef = useRef(null);
 
     const handleScroll = () => {
-      const tkBox = document.querySelector('.tk_box');
-      const rect = tkBox.getBoundingClientRect();
-  
-      // 計算滾動位置比例，讓動畫更早開始和結束
-      const windowHeight = window.innerHeight;
-      const scrollPercent = Math.max(0, Math.min(1, (windowHeight - rect.top - 0.2 * windowHeight) / (0.6 * windowHeight)));
-  
-      // 計算旋轉和位移
-      const rotation = 45 - (45 * scrollPercent); 
-      const translateY = -1110 + (1110 * scrollPercent); // 從 -310 到 0
-  
-      tkWrapRef.current.style.transform = `rotate(${rotation}deg) translateY(${translateY}px)`;
+        const tkBox = document.querySelector('.tk_box');
+        const rect = tkBox.getBoundingClientRect();
+
+        // 計算滾動位置比例，讓動畫更早開始和結束
+        const windowHeight = window.innerHeight;
+        const scrollPercent = Math.max(0, Math.min(1, (windowHeight - rect.top - 0.2 * windowHeight) / (0.6 * windowHeight)));
+
+        // 計算旋轉和位移
+        const rotation = 45 - (45 * scrollPercent);
+        const translateY = -1110 + (1110 * scrollPercent); // 從 -310 到 0
+
+        tkWrapRef.current.style.transform = `rotate(${rotation}deg) translateY(${translateY}px)`;
     };
-  
+
     useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
+        const showBox = showBoxRef.current;
+        if (showBox) {
+            gsap.to(showBox, {
+                x: -2000,
+                duration: 20,
+                repeat: -1,
+                ease: 'none',
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-  
+
 
 
     return (
@@ -156,10 +175,13 @@ const Home = () => {
 
                 </div>
                 <div className="type_banner">
-                    <div className="others">
+                    <div className="others " data-tip data-for="myTooltip1">
                         <div className="en">Others</div>
                         <div className="cn">其他</div>
                     </div>
+                    <Tooltip id="myTooltip1" place="top" effect="solid">
+                        <img src="/home_img/item1.jpg" alt="Tooltip Image"  />
+                    </Tooltip>
                     <div className="reading_club">
                         <div className="en">Reading Club</div>
                         <div className="cn">讀書會</div>
@@ -172,6 +194,8 @@ const Home = () => {
                         <div className="en">Movie</div>
                         <div className="cn">電影</div>
                     </div>
+                    
+
                 </div>
             </section>
             <section id="voting">
@@ -224,7 +248,7 @@ const Home = () => {
 
             </section>
             <section id="pic_show">
-                <div id="show_box">
+                <div id="show_box" ref={showBoxRef}>
                     <img id="pic_line" src="/public/home_img/picline.png" alt="" />
                 </div>
             </section>
