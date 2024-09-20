@@ -614,8 +614,8 @@ header {
                 content: '';
                 position: absolute;
                 left: 0;
-                bottom: 20px;
-                height: 1vw; /* 底線的高度 */
+                bottom: 1.2vw;
+                height: 1.5vw; /* 底線的高度 */
                 width: 100%;
                 background: linear-gradient(135deg, #ff1491, #ff63b6, #eae72d); /* 底線的顏色 */
                 transform: scaleX(0);
@@ -635,8 +635,8 @@ header {
                 content: '';
                 position: absolute;
                 left: 0;
-                bottom: 20px;
-                height: 1vw; /* 底線的高度 */
+                bottom: 1.2px;
+                height: 1.5vw; /* 底線的高度 */
                 width: 100%;
                 background: linear-gradient(135deg, #eae72d, #c319f7, #9205bd); /* 底線的顏色 */
                 transform: scaleX(0);
