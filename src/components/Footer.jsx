@@ -7,7 +7,7 @@ const Footer = () => {
         <div id='footer'>
             <div className="main_wrap">
                 
-                <div class="logo_wrap"><img src="/public/home_img/logo.svg" alt="" /></div>
+                <div class="logo_wrap"><img src="home_img/logo.svg" alt="" /></div>
                 <ul>
                     <li><a href="">成團專區</a></li>
                     <li><a href="">我要投票</a></li>
