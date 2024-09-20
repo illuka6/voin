@@ -76,6 +76,9 @@ const Home = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    
+    
+    
 
 
     return (
@@ -178,7 +181,7 @@ const Home = () => {
                     <div className="sec1">
                         <div className="title_cn">想開團?</div>
                         <div className="title_main">
-                            <div className="title_en">Initiate a Vote</div>
+                            <div className="title_en title1">Initiate a Vote</div>
                             <div className="text_s">從意願調查到收款完整規劃, 不再擔心萬人+1 零人匯款</div>
                         </div>
                         <div className="text1"><img src="/public/home_img/Begging-Hand-Coin-2--Streamline-Ultimate.svg" alt="" />
@@ -191,7 +194,7 @@ const Home = () => {
                     <div className="sec2">
                         <div className="title_cn">想揪團?</div>
                         <div className="title_main">
-                            <div className="title_en">Just Enjoy</div>
+                            <div className="title_en title2">Just Enjoy</div>
                             <div className="text_s">隨時發起投票，想揪什麼就揪！
                                 或許有其他人替你實現願望！</div>
                         </div>

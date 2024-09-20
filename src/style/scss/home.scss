@@ -210,7 +210,8 @@ header {
         font-weight   : 500;
         font-family   : "Noto Sans TC", sans-serif;
         font-weight   : 400;
-        line-height   : 2.2vw;
+        line-height   : 2.28vw;
+        letter-spacing: 1.5px;
     }
 
     .banner_content {
@@ -239,7 +240,12 @@ header {
                     transform: translate(-50%, -50%);
                     /* 移動至中心 */
                 }
+                
             }
+            .tk:hover ~ .star {
+                transform: scale(1.5); // 調整這裡來控制變大的比例
+                transition: transform 0.3s ease; // 添加動畫效果
+              }
 
             .line {
                 position  : absolute;
@@ -602,10 +608,52 @@ header {
             margin     : 1vw 0;
             white-space: nowrap;
         }
+        .title_en.title1 {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 20px;
+                height: 1vw; /* 底線的高度 */
+                width: 100%;
+                background: linear-gradient(135deg, #ff1491, #ff63b6, #eae72d); /* 底線的顏色 */
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease; /* 動畫效果 */
+                z-index: -1;
+            }
+    
+            &:hover::after {
+                transform: scaleX(0.85);
+            }
+        }
+
+        .title_en.title2 {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 20px;
+                height: 1vw; /* 底線的高度 */
+                width: 100%;
+                background: linear-gradient(135deg, #eae72d, #c319f7, #9205bd); /* 底線的顏色 */
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease; /* 動畫效果 */
+                z-index: -1;
+            }
+    
+            &:hover::after {
+                transform: scaleX(0.85);
+            }
+        }
 
         .text_s {
             font-size  : 1.2vw;
             font-family: "Noto Sans TC", sans-serif;
+            
         }
 
         .text1,
