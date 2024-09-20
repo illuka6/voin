@@ -21,6 +21,9 @@ const Home = () => {
             console.error("One of the elements (.tk_wrap, .tk_box, #show_box) not found.");
             return;
         }
+        const timeoutId = setTimeout(() => {
+            // 动画代码
+        }, 0);
 
         // 處理鼠標移動的線條變色效果
         const colors = ['#ff1491', '#ff63b6', '#eae72d', '#cc24ff'];
@@ -37,16 +40,16 @@ const Home = () => {
         document.addEventListener('mousemove', handleMouseMove);
 
         // GSAP滾動觸發動畫
-        const scrollTriggerInstance = gsap.from('.tk_wrap', {
-            scrollTrigger: {
-                trigger: '.tk_box',
-                start: 'top center',
-                end: 'top 20%',
-                scrub: true,
-            },
-            rotation: 45,
-            yPercent: '-310',
-        });
+        // const scrollTriggerInstance = gsap.from('.tk_wrap', {
+        //     scrollTrigger: {
+        //         trigger: '.tk_box',
+        //         start: 'top center',
+        //         end: 'top 20%',
+        //         scrub: true,
+        //     },
+        //     rotation: 45,
+        //     yPercent: '-310',
+        // });
 
         // 無限滾動動畫
         const infiniteScrollAnimation = gsap.to('#show_box', {
@@ -80,9 +83,7 @@ const Home = () => {
             // 清除所有 ScrollTrigger 觸發器
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-            // 清除其他動畫
-            scrollTriggerInstance.kill();
-            infiniteScrollAnimation.kill();
+
         };
     }, []);
 
@@ -139,13 +140,13 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="tk tk_md">
-                            <div className="img_box"><img src="/public/home_img_img/item1.jpg" alt="" /></div>
+                            <div className="img_box"><img src="/public/home_img/item1.jpg" alt="" /></div>
                             <div className="content_box">
                                 <h1>異形全系列觀影會</h1>
                                 <div className="text">
                                     <p>想和喜歡異型系列的粉絲揪一場1979開始的全系列私人連映會</p>
                                 </div>
-                                <div className="pl"><img src="/public/home_img_img/seat.svg" alt="" />
+                                <div className="pl"><img src="/public/home_img/seat.svg" alt="" />
                                     <p>8</p>
                                 </div>
                                 <div className="tag_wrap">
@@ -161,16 +162,15 @@ const Home = () => {
                                         </p>
                                     </div>
                                 </div>
-
                             </div>
-                            <div className="tk tk_r">
-                                <div className="wrap">
-                                    <div className="year">2024</div>
-                                    <div className="date">02.19</div>
-                                    <div className="wd">週六</div>
-                                    <div className="time">01:00 PM</div>
-                                    <div className="location"><img src="/public/home_img_img/location_on.svg" alt="" />台北市</div>
-                                </div>
+                        </div>
+                        <div className="tk tk_r">
+                            <div className="wrap">
+                                <div className="year">2024</div>
+                                <div className="date">02.19</div>
+                                <div className="wd">週六</div>
+                                <div className="time">01:00 PM</div>
+                                <div className="location"><img src="/public/home_img/location_on.svg" alt="" />台北市</div>
                             </div>
                         </div>
                         <div className="arr_more">
