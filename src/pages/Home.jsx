@@ -1,93 +1,37 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
-
 gsap.registerPlugin(ScrollTrigger);
+
+
 
 const Home = () => {
 
     ////
+    const tkWrapRef = useRef(null);
 
-    const starRef = useRef(null);
-    const lineRef = useRef(null);
-
+    const handleScroll = () => {
+      const tkBox = document.querySelector('.tk_box');
+      const rect = tkBox.getBoundingClientRect();
+  
+      // 計算滾動位置比例，讓動畫更早開始和結束
+      const windowHeight = window.innerHeight;
+      const scrollPercent = Math.max(0, Math.min(1, (windowHeight - rect.top - 0.2 * windowHeight) / (0.6 * windowHeight)));
+  
+      // 計算旋轉和位移
+      const rotation = 45 - (45 * scrollPercent); 
+      const translateY = -1110 + (1110 * scrollPercent); // 從 -310 到 0
+  
+      tkWrapRef.current.style.transform = `rotate(${rotation}deg) translateY(${translateY}px)`;
+    };
+  
     useEffect(() => {
-        const tkWrap = document.querySelector('.tk_wrap');
-        const tkBox = document.querySelector('.tk_box');
-        const showBox = document.querySelector('#show_box');
-        if (!tkWrap || !tkBox || !showBox) {
-            console.error("One of the elements (.tk_wrap, .tk_box, #show_box) not found.");
-            return;
-        }
-        const timeoutId = setTimeout(() => {
-            // 动画代码
-        }, 0);
-
-        // 處理鼠標移動的線條變色效果
-        const colors = ['#ff1491', '#ff63b6', '#eae72d', '#cc24ff'];
-
-        const handleMouseMove = (e) => {
-            const index = Math.floor((e.clientX / window.innerWidth) * (colors.length - 1));
-            const nextIndex = (index + 1) % colors.length;
-
-            if (lineRef.current) {
-                lineRef.current.style.background = `linear-gradient(135deg, ${colors[index]}, ${colors[nextIndex]})`;
-            }
-        };
-
-        document.addEventListener('mousemove', handleMouseMove);
-
-        // GSAP滾動觸發動畫
-        // const scrollTriggerInstance = gsap.from('.tk_wrap', {
-        //     scrollTrigger: {
-        //         trigger: '.tk_box',
-        //         start: 'top center',
-        //         end: 'top 20%',
-        //         scrub: true,
-        //     },
-        //     rotation: 45,
-        //     yPercent: '-310',
-        // });
-
-        // 無限滾動動畫
-        const infiniteScrollAnimation = gsap.to('#show_box', {
-            x: -2000,
-            duration: 20,
-            repeat: -1,
-            ease: 'none',
-        });
-
-        // 星星旋轉與縮放動畫
-        if (starRef.current) {
-            gsap.to(starRef.current, {
-                rotation: 360,
-                duration: 20,
-                ease: 'linear',
-                repeat: -1,
-            });
-            gsap.to(starRef.current, {
-                scale: 1.45,
-                duration: 2,
-                ease: 'linear',
-                yoyo: true,
-                repeat: -1,
-            });
-        }
-
-        // 清理事件監聽器和動畫
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-
-            // 清除所有 ScrollTrigger 觸發器
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-
-        };
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+  
 
-    ////
 
     return (
         <>
@@ -102,7 +46,7 @@ const Home = () => {
                     </div>
                 </nav>
             </header>
-            {/* <section id="background">
+            <section id="background">
                 <svg>
                     <filter id="noise">
                         <feTurbulence id="turbilence" baseFrequency="0.1">
@@ -112,7 +56,7 @@ const Home = () => {
                         <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
                     </filter>
                 </svg>
-            </section> */}
+            </section>
             <section id="banner">
                 <div className="title"><img src="/public/home_img/VOIN_Joy.svg" alt="" /></div>
                 <div className="text">
@@ -128,12 +72,14 @@ const Home = () => {
                 </div>
             </section>
             <section id="newGroup">
-                <div className="title_wrap">
+                <div className="title_wrap" >
                     <div className="title_en"><span>Newest Group</span></div>
                     <div className="title_cn"><span>最新成團</span></div>
                 </div>
                 <div className="tk_box">
-                    <div className="tk_wrap">
+                    <div className="tk_wrap"
+                        ref={tkWrapRef}
+                    >
                         <div className="tk tk_l">
                             <div className="type_bg">
                                 <div>Movie</div>
@@ -173,10 +119,11 @@ const Home = () => {
                                 <div className="location"><img src="/public/home_img/location_on.svg" alt="" />台北市</div>
                             </div>
                         </div>
-                        <div className="arr_more">
-                            <div className="text">More</div>
-                            <div className="arrow"></div>
-                        </div>
+
+                    </div>
+                    <div className="arr_more">
+                        <div className="text">More</div>
+                        <div className="arrow"></div>
                     </div>
                 </div>
             </section>

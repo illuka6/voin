@@ -282,6 +282,9 @@ header nav .btn_menu_wrap .menu {
   cursor: pointer;
   width: auto;
   display: flex;
+  transition: transform 0.5s ease;
+  transform: rotate(45deg) translateY(-1110px);
+  transform-origin: center; /* 設置旋轉軸在物件中心 */
 }
 #newGroup .tk_box .tk_wrap .tk {
   background-color: #fff;

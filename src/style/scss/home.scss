@@ -236,7 +236,7 @@ header {
 
             //     transform-origin: center;
             //     animation       : scale 7s ease-in-out infinite;
-                
+
             // }
             // @keyframes scale {
             //     0%,
@@ -289,9 +289,12 @@ header {
         align-items    : center;
 
         .tk_wrap {
-            cursor : pointer;
-            width  : auto;
-            display: flex;
+            cursor    : pointer;
+            width     : auto;
+            display   : flex;
+            transition: transform 0.5s ease;
+            transform : rotate(45deg) translateY(-1110px);
+            transform-origin: center;/* 設置旋轉軸在物件中心 */
 
             .tk {
                 background-color: #fff;
