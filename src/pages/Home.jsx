@@ -7,12 +7,38 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 
 
 const Home = () => {
 
+    //
+    const [tooltip, setTooltip] = useState({ visible: false, imgSrc: '', x: 0, y: 0 });
+
+    const handleMouseEnter = (imgSrc, event) => {
+        setTooltip({
+            visible: true,
+            imgSrc,
+            x: event.pageX - window.innerWidth * 0.75, // 使用 视口宽度作为偏移
+        y: event.pageY - window.innerHeight * 2, // 使用 视口高度作为偏移
+        });
+    };
+
+    const handleMouseMove = (event) => {
+        if (tooltip.visible) {
+            setTooltip((prev) => ({
+                ...prev,
+                x: event.pageX - window.innerWidth * 0.75, // 使用 视口宽度作为偏移
+        y: event.pageY - window.innerHeight * 2, // 使用 视口高度作为偏移
+            }));
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setTooltip({ ...tooltip, visible: false });
+    };
 
 
 
@@ -77,7 +103,7 @@ const Home = () => {
                 </svg>
             </section>
             <section id="banner">
-                <div className="title"><img src="/public/home_img/VOIN_Joy.svg" alt="" /></div>
+                <div className="title"><img src="/home_img/VOIN_Joy.svg" alt="" /></div>
                 <div className="text">
                     <div>投出你想參加的場次</div>
                     <div>Vote for Tickets</div>
@@ -175,27 +201,42 @@ const Home = () => {
 
                 </div>
                 <div className="type_banner">
-                    <div className="others " data-tip data-for="myTooltip1">
+                <div className="container" onMouseMove={handleMouseMove}>
+                    <div className="others " 
+                    onMouseEnter={(event) => handleMouseEnter('/public/home_img/other.jpg', event)}
+                    onMouseLeave={handleMouseLeave}>
                         <div className="en">Others</div>
                         <div className="cn">其他</div>
                     </div>
-                    <Tooltip id="myTooltip1" place="top" effect="solid">
-                        <img src="/home_img/item1.jpg" alt="Tooltip Image"  />
-                    </Tooltip>
-                    <div className="reading_club">
+                    <div className="reading_club"
+                    onMouseEnter={(event) => handleMouseEnter('/public/home_img/reading.jpg', event)}
+                    onMouseLeave={handleMouseLeave}>
                         <div className="en">Reading Club</div>
                         <div className="cn">讀書會</div>
                     </div>
-                    <div className="tea_party">
+                    <div className="tea_party"
+                    onMouseEnter={(event) => handleMouseEnter('/public/home_img/tea.jpg', event)}
+                    onMouseLeave={handleMouseLeave}>
                         <div className="en">Tea Party</div>
                         <div className="cn">茶會</div>
                     </div>
-                    <div className="movie">
+                    <div className="movie"
+                    onMouseEnter={(event) => handleMouseEnter('/public/home_img/movie.jpg', event)}
+                    onMouseLeave={handleMouseLeave}>
                         <div className="en">Movie</div>
                         <div className="cn">電影</div>
                     </div>
-                    
 
+                    {tooltip.visible && (
+                    <img
+                    src={tooltip.imgSrc}
+                    className="tooltip"
+                    style={{ left: tooltip.x, 
+                        top: tooltip.y  }}
+                    alt="Tooltip"
+                    />
+                    )}
+                    </div>
                 </div>
             </section>
             <section id="voting">
@@ -207,12 +248,12 @@ const Home = () => {
 
                     <div className="htk_box">
                         <div className="htk_img">
-                            <div className="type_tag">Reading Club</div>
-                            <div className="img_wrap"><img src="/public/home_img/cs_men.jpg" alt="" /></div>
+                            <div className="type_tag">Movie</div>
+                            <div className="img_wrap"><img src="/public/home_img/item_madmax.jpg" alt="" /></div>
                         </div>
                         <div className="htk_content">
-                            <div className="e_title">鏈鋸人漫畫讀書分享會</div>
-                            <div className="e_date">2024.3.25</div>
+                            <div className="e_title">MadMax憤怒道放映會</div>
+                            <div className="e_date">2024.12.25</div>
                             <div className="e_location"><img src="/public/home_img/location_on.svg" alt="" />台中市</div>
                         </div>
                     </div>

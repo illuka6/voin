@@ -12,7 +12,6 @@ function App() {
     <>
       <Home ></Home>
       <Footer></Footer>
-      <Type_tooltip></Type_tooltip>
       
     </>
   )

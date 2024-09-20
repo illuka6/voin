@@ -35,7 +35,7 @@ const Type_tooltip = () => {
         <div className="container" onMouseMove={handleMouseMove}>
             <div
                 className="block"
-                onMouseEnter={(event) => handleMouseEnter('https://via.placeholder.com/100', event)}
+                onMouseEnter={(event) => handleMouseEnter('/public/home_img/item1.jpg', event)}
                 onMouseLeave={handleMouseLeave}
             >
                 區塊 1
@@ -63,6 +63,8 @@ const Type_tooltip = () => {
                     alt="Tooltip"
                 />
             )}
+
+            
         </div>
     );
 

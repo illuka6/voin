@@ -88,25 +88,20 @@ footer li {
   list-style: none;
 }
 
-.tooltip {
-  position: absolute;
-  background-color: red;
-  border: 1px solid red;
-  padding: 10px;
-  border-radius: 5px;
-  pointer-events: none;
-  z-index: 1000; /* 確保 tooltip 在最上面 */
+.container {
+  cursor: default;
+  position: relative;
+  display: flex;
+  width: 100%;
 }
 
-.react-tooltip {
-  display: block !important; /* 強制顯示以檢查 */
-  position: absolute;
-  background-color: red;
-  border: 1px solid red;
-  padding: 10px;
-  border-radius: 5px;
+.tooltip {
+  border: 0px solid rgb(0, 0, 0);
   pointer-events: none;
   z-index: 1000; /* 確保 tooltip 在最上面 */
+  height: auto;
+  width: 20vw !important;
+  position: absolute !important;
 }
 
 /*  */
