@@ -21,7 +21,7 @@ const Home = () => {
         setTooltip({
             visible: true,
             imgSrc,
-            x: event.pageX - window.innerWidth * 0.75, // 使用 视口宽度作为偏移
+            x: event.pageX - window.innerWidth * 0.78, // 使用 视口宽度作为偏移
         y: event.pageY - window.innerHeight * 2, // 使用 视口高度作为偏移
         });
     };
@@ -30,7 +30,7 @@ const Home = () => {
         if (tooltip.visible) {
             setTooltip((prev) => ({
                 ...prev,
-                x: event.pageX - window.innerWidth * 0.75, // 使用 视口宽度作为偏移
+                x: event.pageX - window.innerWidth * 0.78, // 使用 视口宽度作为偏移
         y: event.pageY - window.innerHeight * 2, // 使用 视口高度作为偏移
             }));
         }

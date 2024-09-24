@@ -73,7 +73,7 @@ a {
   justify-content: center;
 }
 #footer .main_wrap ul li {
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   margin: 1vw;
 }
 #footer .main_wrap .copyRight {
@@ -382,9 +382,9 @@ header nav .btn_menu_wrap .menu {
   font-size: 50px;
   writing-mode: vertical-lr;
   text-orientation: mixed;
-  transform: scaleX(-1);
-  /* 水平翻轉 */
-  /* 調整旋轉基點 */
+  transform: scale(-1);
+  /* 同時翻轉並調整位置 */
+  line-height: 40px;
 }
 #newGroup .tk_box .tk_wrap:hover .tk_l .type_bg {
   background-color: transparent;
@@ -702,7 +702,7 @@ header nav .btn_menu_wrap .menu {
 #voting .htk_wrap .htk_box {
   margin: 2vw;
   height: 420px;
-  width: 260px;
+  width: 250px;
 }
 #voting .htk_wrap .htk_box .htk_img {
   display: flex;
@@ -710,8 +710,8 @@ header nav .btn_menu_wrap .menu {
   justify-content: start;
   overflow: hidden;
   border: 2px black solid;
-  height: 300px;
-  width: 260px;
+  height: 280px;
+  width: 240px;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 20px;
 }
@@ -725,7 +725,7 @@ header nav .btn_menu_wrap .menu {
   font-weight: 700;
 }
 #voting .htk_wrap .htk_box .htk_img .img_wrap {
-  height: 260px;
+  height: 240px;
 }
 #voting .htk_wrap .htk_box .htk_img .img_wrap img {
   object-fit: cover;
@@ -737,8 +737,8 @@ header nav .btn_menu_wrap .menu {
 #voting .htk_wrap .htk_box .htk_content {
   border: 2px black solid;
   border-top: 0px;
-  height: 120px;
-  width: 260px;
+  height: 110px;
+  width: 240px;
   border-bottom-left-radius: 40px;
   border-top-left-radius: 20px;
   background-color: white;
@@ -746,16 +746,20 @@ header nav .btn_menu_wrap .menu {
 }
 #voting .htk_wrap .htk_box .htk_content .e_title {
   font-family: "Noto Sans TC", system-ui;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
+}
+#voting .htk_wrap .htk_box .htk_content .e_date {
+  font-size: 15px;
 }
 #voting .htk_wrap .htk_box .htk_content .e_location {
   margin-top: 18px;
   margin-left: -4px;
   display: flex;
+  font-size: 15px;
 }
 #voting .htk_wrap .htk_box .htk_content .e_location img {
-  width: 20px;
+  width: 18px;
 }
 #voting .htk_btn {
   display: flex;

@@ -37,14 +37,15 @@
                     position        : absolute;
                     left            : 0;
                     bottom          : 0;
-                    // height: 100%;
-                    // width: 100%;
                     color           : #fff;
                     font-weight     : 800;
                     font-size       : 50px;
-                    transform       : rotate(-90deg);
-                    transform-origin: left top;
-                    /* 調整旋轉基點 */
+                    writing-mode    : vertical-lr;
+                    text-orientation: mixed;
+                    transform       : scale(-1) ;
+                    /* 同時翻轉並調整位置 */
+                    line-height: 40px;
+
                 }
             }
         }
