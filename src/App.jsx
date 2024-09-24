@@ -2,16 +2,23 @@
 import Home from "./pages/Home"
 
 import  './style/css/home.css'
+import  './style/css/Tk_vote.css'
 import Footer from "./components/Footer"
-import Type_tooltip from "./components/Type_tooltip"
+
+import Tk_vote from "./components/Tk_vote"
+
 
 function App() {
   
 
   return (
     <>
-      <Home ></Home>
-      <Footer></Footer>
+      {/* <Tk_vote/> */}
+      
+      <Home/>
+      <Footer/>
+      
+    
       
     </>
   )

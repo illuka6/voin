@@ -1,26 +1,29 @@
 @use 'reset';
 @use './_footer.scss';
+// @use './Tk_full';
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@300;400;700&display=swap');
 
 
 
+
 .container {
-    cursor: default;
+    cursor  : default;
     position: relative;
-    display  : flex;
-    width: 100%;
+    display : flex;
+    width   : 100%;
 }
 
 .tooltip {
-    
-    border: 0px solid rgb(0, 0, 0);
+
+    border        : 0px solid rgb(0, 0, 0);
     pointer-events: none;
-    z-index: 1000; /* 確保 tooltip 在最上面 */
-    height: auto;
-    width: 20vw !important;
-    position: absolute !important;
+    z-index       : 1000;
+    /* 確保 tooltip 在最上面 */
+    height        : auto;
+    width         : 20vw !important;
+    position      : absolute !important;
 }
 
 
@@ -240,12 +243,13 @@ header {
                     transform: translate(-50%, -50%);
                     /* 移動至中心 */
                 }
-                
+
             }
-            .tk:hover ~ .star {
-                transform: scale(1.5); // 調整這裡來控制變大的比例
+
+            .tk:hover~.star {
+                transform : scale(1.5); // 調整這裡來控制變大的比例
                 transition: transform 0.3s ease; // 添加動畫效果
-              }
+            }
 
             .line {
                 position  : absolute;
@@ -317,12 +321,13 @@ header {
         align-items    : center;
 
         .tk_wrap {
-            cursor    : pointer;
-            width     : auto;
-            display   : flex;
-            transition: transform 0.5s ease;
-            transform : rotate(45deg) translateY(-1110px);
-            transform-origin: center;/* 設置旋轉軸在物件中心 */
+            cursor          : pointer;
+            width           : auto;
+            display         : flex;
+            transition      : transform 0.5s ease;
+            transform       : rotate(45deg) translateY(-1110px);
+            transform-origin: center;
+            /* 設置旋轉軸在物件中心 */
 
             .tk {
                 background-color: #fff;
@@ -360,210 +365,214 @@ header {
                         color           : #fff;
                         font-weight     : 800;
                         font-size       : 50px;
-                        transform       : rotate(-90deg);
-                        transform-origin: left top;
-                        /* 調整旋轉基點 */
+                        writing-mode    : vertical-lr;
+                        text-orientation: mixed;
+                        transform       : scale(-1) ;
+                        /* 同時翻轉並調整位置 */
+                        line-height: 40px;
+
                     }
-                }
-            }
-
-            &:hover .tk_l .type_bg {
-                background-color: transparent; // 移除黑色背景，显示渐变
-                background-image: linear-gradient(135deg, black, #ff1491, #eae72d, #9212b8, black, black, black, black); // 渐变背景
-                animation       : gradientMove 0.4s linear forwards alternate;
-
-            }
-
-            // 定义背景流动的关键帧动画
-            @keyframes gradientMove {
-                0% {
-                    background-position: 0% 0%;
-                }
-
-                100% {
-                    background-position: 100% 100%;
-                }
-            }
-
-            .tk_md {
-                width       : 460px;
-                border-right: 0px;
-                border-left : 1px;
-                display     : flex;
-
-                .img_box {
-                    border     : 1px solid black;
-                    height     : 218px;
-                    width      : 218px;
-                    flex-shrink: 0
-                }
-
-                .content_box {
-
-                    padding: 0 0 0 10px;
-
-                    h1 {
-                        font-size     : 18px;
-                        font-weight   : 800;
-                        padding-bottom: 10px;
-                        border-bottom : 1px solid black;
-                    }
-
-                    .text {
-                        padding: 10px 5px;
-
-                        p {
-                            font-size  : 15px;
-                            line-height: 20px;
-                        }
-                    }
-
-                    .pl {
-                        margin : 0 0 15px 0;
-                        display: flex;
-
-                        img {
-                            width: 20px;
-                        }
-                    }
-
-                    .tag_wrap {
-                        font-size      : 14px;
-                        flex-wrap      : wrap;
-                        /* 允許子元素換行 */
-                        align-items    : flex-start;
-                        /* 讓所有子元素靠上排列 */
-                        justify-content: flex-start;
-
-                        /* 讓子元素靠左排列 */
-                        .tag {
-                            padding      : 1px 8px;
-                            display      : inline-flex;
-                            /* 確保標籤的內容內聯排列 */
-                            align-items  : center;
-                            align-items  : center;
-                            margin-right : 2px;
-                            /* 每個標籤之間的間距 */
-                            margin-bottom: 5px;
-                            /* 換行時標籤之間的垂直間距 */
-                            word-break   : break-word;
-                            /* 避免過長內容溢出，換行顯示 */
-                            border       : 1px;
-                            border-radius: 99px;
-                            border       : 1px solid black;
-                        }
-                    }
-                }
-
-            }
-
-            .tk_r {
-                width      : 180px;
-                border-left: 0px;
-
-                &::before {
-                    content    : '';
-                    position   : absolute;
-                    top        : 10px;
-                    bottom     : 10px;
-                    left       : -1px;
-                    /* 控制虛線的起始位置 */
-                    width      : 2px;
-                    border-left: 2px dashed black;
-                }
-
-                .wrap {
-                    width             : 100%;
-                    height            : 100%;
-                    display           : flex;
-                    flex-direction    : column;
-                    align-items       : center;
-                    // justify-content: center;
-                    text-align        : center;
-
-                    div {
-                        text-align: center;
-                    }
-
-                    .date {
-                        padding         : 0 20px;
-                        font-size       : 35px;
-                        line-height     : 39px;
-                        background-color: rgb(129, 129, 129);
-                        color           : white;
-                        margin-bottom   : 16px;
-                    }
-
-                    .time {
-                        background-color: black;
-                        color           : white;
-                        font-size       : 14px;
-                        line-height     : 16px;
-                        margin          : 35px 0;
-                    }
-
-                    .location {
-                        display        : flex;
-                        justify-content: center;
-
-                        img {
-                            width: 22px;
-                        }
-
-                        margin-right: 8px;
-                    }
-
                 }
             }
         }
 
-
-    }
-
-    .arr_more {
-        position: absolute;
-        bottom  : 7vw;
-        right   : 7vw;
-        color   : white;
-
-        .text {
-            font-size: 18px;
+        &:hover .tk_l .type_bg {
+            background-color: transparent; // 移除黑色背景，显示渐变
+            background-image: linear-gradient(135deg, black, #ff1491, #eae72d, #9212b8, black, black, black, black); // 渐变背景
+            animation       : gradientMove 0.4s linear forwards alternate;
 
         }
 
-        .arrow {
-            margin-top: -10px;
-            position  : relative;
-            display   : inline-block;
-            width     : 150px;
-            height    : 50px;
+        // 定义背景流动的关键帧动画
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 0%;
+            }
 
+            100% {
+                background-position: 100% 100%;
+            }
+        }
 
+        .tk_md {
+            width       : 460px;
+            border-right: 0px;
+            border-left : 1px;
+            display     : flex;
+
+            .img_box {
+                border     : 1px solid black;
+                height     : 218px;
+                width      : 218px;
+                flex-shrink: 0
+            }
+
+            .content_box {
+
+                padding: 0 0 0 10px;
+
+                h1 {
+                    font-size     : 18px;
+                    font-weight   : 800;
+                    padding-bottom: 10px;
+                    border-bottom : 1px solid black;
+                }
+
+                .text {
+                    padding: 10px 5px;
+
+                    p {
+                        font-size  : 15px;
+                        line-height: 20px;
+                    }
+                }
+
+                .pl {
+                    margin : 0 0 15px 0;
+                    display: flex;
+
+                    img {
+                        width: 20px;
+                    }
+                }
+
+                .tag_wrap {
+                    font-size      : 14px;
+                    flex-wrap      : wrap;
+                    /* 允許子元素換行 */
+                    align-items    : flex-start;
+                    /* 讓所有子元素靠上排列 */
+                    justify-content: flex-start;
+
+                    /* 讓子元素靠左排列 */
+                    .tag {
+                        padding      : 1px 8px;
+                        display      : inline-flex;
+                        /* 確保標籤的內容內聯排列 */
+                        align-items  : center;
+                        align-items  : center;
+                        margin-right : 2px;
+                        /* 每個標籤之間的間距 */
+                        margin-bottom: 5px;
+                        /* 換行時標籤之間的垂直間距 */
+                        word-break   : break-word;
+                        /* 避免過長內容溢出，換行顯示 */
+                        border       : 1px;
+                        border-radius: 99px;
+                        border       : 1px solid black;
+                    }
+                }
+            }
+
+        }
+
+        .tk_r {
+            width      : 180px;
+            border-left: 0px;
 
             &::before {
-                content         : '';
-                position        : absolute;
-                top             : 50%;
-                left            : -2px;
-                width           : 100%;
-                height          : 2px;
-                background-color: white;
+                content    : '';
+                position   : absolute;
+                top        : 10px;
+                bottom     : 10px;
+                left       : -1px;
+                /* 控制虛線的起始位置 */
+                width      : 2px;
+                border-left: 2px dashed black;
             }
 
-            &::after {
-                content         : '';
-                position        : absolute;
-                top             : 18px;
-                right           : 0;
-                width           : 20px;
-                height          : 2px;
-                background-color: white;
-                transform       : rotate(45deg);
+            .wrap {
+                width             : 100%;
+                height            : 100%;
+                display           : flex;
+                flex-direction    : column;
+                align-items       : center;
+                // justify-content: center;
+                text-align        : center;
+
+                div {
+                    text-align: center;
+                }
+
+                .date {
+                    padding         : 0 20px;
+                    font-size       : 35px;
+                    line-height     : 39px;
+                    background-color: rgb(129, 129, 129);
+                    color           : white;
+                    margin-bottom   : 16px;
+                }
+
+                .time {
+                    background-color: black;
+                    color           : white;
+                    font-size       : 14px;
+                    line-height     : 16px;
+                    margin          : 35px 0;
+                }
+
+                .location {
+                    display        : flex;
+                    justify-content: center;
+
+                    img {
+                        width: 22px;
+                    }
+
+                    margin-right: 8px;
+                }
+
             }
         }
+    }
 
+
+}
+
+.arr_more {
+    position: absolute;
+    bottom  : 7vw;
+    right   : 7vw;
+    color   : white;
+
+    .text {
+        font-size: 18px;
 
     }
+
+    .arrow {
+        margin-top: -10px;
+        position  : relative;
+        display   : inline-block;
+        width     : 150px;
+        height    : 50px;
+
+
+
+        &::before {
+            content         : '';
+            position        : absolute;
+            top             : 50%;
+            left            : -2px;
+            width           : 100%;
+            height          : 2px;
+            background-color: white;
+        }
+
+        &::after {
+            content         : '';
+            position        : absolute;
+            top             : 18px;
+            right           : 0;
+            width           : 20px;
+            height          : 2px;
+            background-color: white;
+            transform       : rotate(45deg);
+        }
+    }
+
+
+}
 
 }
 
@@ -608,22 +617,27 @@ header {
             margin     : 1vw 0;
             white-space: nowrap;
         }
+
         .title_en.title1 {
             position: relative;
+
             &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: 1.2vw;
-                height: 1.5vw; /* 底線的高度 */
-                width: 100%;
-                background: linear-gradient(135deg, #ff1491, #ff63b6, #eae72d); /* 底線的顏色 */
-                transform: scaleX(0);
+                content         : '';
+                position        : absolute;
+                left            : 0;
+                bottom          : 1.2vw;
+                height          : 1.5vw;
+                /* 底線的高度 */
+                width           : 100%;
+                background      : linear-gradient(135deg, #ff1491, #ff63b6, #eae72d);
+                /* 底線的顏色 */
+                transform       : scaleX(0);
                 transform-origin: left;
-                transition: transform 0.3s ease; /* 動畫效果 */
-                z-index: -1;
+                transition      : transform 0.3s ease;
+                /* 動畫效果 */
+                z-index         : -1;
             }
-    
+
             &:hover::after {
                 transform: scaleX(0.85);
             }
@@ -631,20 +645,24 @@ header {
 
         .title_en.title2 {
             position: relative;
+
             &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: 1.2px;
-                height: 1.5vw; /* 底線的高度 */
-                width: 100%;
-                background: linear-gradient(135deg, #eae72d, #c319f7, #9205bd); /* 底線的顏色 */
-                transform: scaleX(0);
+                content         : '';
+                position        : absolute;
+                left            : 0;
+                bottom          : 1.2vw;
+                height          : 1.5vw;
+                /* 底線的高度 */
+                width           : 100%;
+                background      : linear-gradient(135deg, #eae72d, #c319f7, #9205bd);
+                /* 底線的顏色 */
+                transform       : scaleX(0);
                 transform-origin: left;
-                transition: transform 0.3s ease; /* 動畫效果 */
-                z-index: -1;
+                transition      : transform 0.3s ease;
+                /* 動畫效果 */
+                z-index         : -1;
             }
-    
+
             &:hover::after {
                 transform: scaleX(0.85);
             }
@@ -653,7 +671,7 @@ header {
         .text_s {
             font-size  : 1.2vw;
             font-family: "Noto Sans TC", sans-serif;
-            
+
         }
 
         .text1,
